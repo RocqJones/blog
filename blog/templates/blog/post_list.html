@@ -16,11 +16,11 @@
     <!-- Now its time to iterate through -->
     {% for post in posts %}
         <!-- {{ posts }} -->
-        <di>
+        <div>
             <h2>{{ post.title }}</h2>
             <p>{{ post.text | linebreaksbr }}</p>
             <p><strong>Published: {{ post.published_date }}</strong></p>
-        </di>
+        </div>
     {% endfor %}
 
 </body>
