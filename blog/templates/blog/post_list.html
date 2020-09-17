@@ -1,27 +1,52 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blogs</title>
+    <title>2day-Tech Blogs</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
 </head>
+
 <body>
-    <div>
-        <h1>WELCOME TO blog WEBSITE</h1>
+    <div class="jumbotron text-center">
+        <div class="inner-text">
+            <h1>~ Welcome To 2day-Tech Blogs ~</h1>
+        </div>
     </div>
     <!-- <p>Hello Django!</p> -->
     <!-- {{ posts }} -->
 
     <!-- Now its time to iterate through -->
-    {% for post in posts %}
-        <!-- {{ posts }} -->
-        <div>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.text | linebreaksbr }}</p>
-            <p><strong>Published: {{ post.published_date }}</strong></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for post in posts %}
+                <!-- {{ posts }} -->
+                <div class="post">
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
+    </div>
 
 </body>
+
 </html>
